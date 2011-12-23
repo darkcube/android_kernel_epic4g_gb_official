@@ -3491,7 +3491,6 @@ static void __init onenand_init()
 static void __init aries_machine_init(void)
 {
 	setup_ram_console_mem();
-	s3c_usb_set_serial();
 	platform_add_devices(aries_devices, ARRAY_SIZE(aries_devices));
 
 	/* Find out S5PC110 chip version */

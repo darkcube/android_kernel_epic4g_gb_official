@@ -214,7 +214,7 @@ void FSA9480_Enable_SPK(u8 enable)
 
 
 extern int currentusbstatus;
-#if 1
+#ifdef CONFIG_USB_ANDROID_SAMSUNG_COMPOSITE
 static ssize_t print_switch_state(struct switch_dev *sdev, char *buf)
 {
         int usbstatus;
@@ -762,7 +762,7 @@ static int __devinit fsa9480_probe(struct i2c_client *client,
 		usbsw->pdata->reset_cb();
 
         indicator_dev.name = DRIVER_NAME;
-#if 1
+#ifdef CONFIG_USB_ANDROID_SAMSUNG_COMPOSITE
         indicator_dev.print_name = print_switch_name;
         indicator_dev.print_state = print_switch_state;
 #endif

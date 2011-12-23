@@ -3426,7 +3426,6 @@ static void k3g_irq_init(void)
 static void __init victory_machine_init(void)
 {
 	setup_ram_console_mem();
-	s3c_usb_set_serial();
 	platform_add_devices(victory_devices, ARRAY_SIZE(victory_devices));
         printk(KERN_EMERG "VICTORY The **************SYSTEM_REV********** is 0x%x\n",system_rev);
 	/* Find out S5PC110 chip version */
@@ -3533,11 +3532,6 @@ static void __init victory_machine_init(void)
 	victory_init_wifi_mem();
 
 	onenand_init();
-	#ifdef CONFIG_USB_ANDROID_SAMSUNG_COMPOSITE
-	/* soonyong.cho : This is for setting unique serial number */
-        s3c_usb_set_serial();
-        #endif
-
 
 	if (gpio_is_valid(GPIO_MSENSE_nRST)) {
 		if (gpio_request(GPIO_MSENSE_nRST, "GPD0"))
