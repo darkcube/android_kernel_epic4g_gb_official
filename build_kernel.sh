@@ -49,7 +49,7 @@ TARGET_LOCALE="vzw"
 
 #uncomment to add custom version string
 #export KBUILD_BUILD_VERSION="nubernel-EC05_v0.0.0"
-DEFCONFIG_STRING=cyanogenmod_epic_defconfig
+DEFCONFIG_STRING=cyanogenmod_epicmtd_defconfig
 
 #TOOLCHAIN=`pwd`/toolchains/android-toolchain-4.4.3/bin
 #TOOLCHAIN_PREFIX=arm-linux-androideabi-
@@ -108,7 +108,7 @@ BUILD_KERNEL()
 		make ARCH=arm $DEFCONFIG_STRING
 		make -j$CPU_JOB_NUM ARCH=arm CROSS_COMPILE=$TOOLCHAIN/$TOOLCHAIN_PREFIX 2>&1 | tee make.out
 #		make V=1 -j$CPU_JOB_NUM ARCH=arm CROSS_COMPILE=$TOOLCHAIN/$TOOLCHAIN_PREFIX 2>&1 | tee make.out
-		cp arch/arm/boot/zImage /home/nubecoder/cm_android/system/device/samsung/epic/kernel
+		cp arch/arm/boot/zImage /home/timothy/development/ics/device/samsung/epicmtd/kernel
 	popd
 }
 

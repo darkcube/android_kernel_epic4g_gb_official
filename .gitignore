@@ -72,3 +72,5 @@ Kernel/make.out
 Kernel/vmlinux
 
 .DS_Store
+.cproject
+.project
